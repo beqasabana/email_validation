@@ -27,10 +27,21 @@ class Email:
             emails.append(cls(email))
         return emails
 
+    @classmethod
+    def delete_email(cls, data):
+        query = "DELETE FROM emails WHERE id = %(id)s"
+        connectToMySQL('email_schema').query_db(query, data)
+        return
+
     @staticmethod
     def validate_email(email):
         is_valid = True
         if not EMAIL_REGEX.match(email):
             flash("Invalid Email Address!")
             is_valid = False
+        all_emails_in_db = Email.get_all()
+        for email_in_db in all_emails_in_db:
+            if email == email_in_db.email:
+                flash("Email address already exists use different email.")
+                is_valid = False
         return is_valid

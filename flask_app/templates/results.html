@@ -12,6 +12,9 @@
 <body>
 
     <div class="container-sm">
+        <div class="success-message">
+            <p>The email address you entered -- {{ emails[-1].email }} -- is VALID email address! Thank you!</p>
+        </div>
         <table class="table">
             <thead>
                 <tr>
@@ -24,6 +27,7 @@
                     <tr>
                         <td>{{ email.email }}</td>
                         <td>{{ email.created_at }}</td>
+                        <td><a href="/delete/{{ email.id }}">Delete</a></td>
                     </tr>
                 {% endfor %}
             </tbody>

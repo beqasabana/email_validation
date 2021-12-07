@@ -6,3 +6,13 @@
     background-color: red;
     width: fit-content;
 }
+
+.success-message {
+    margin: 0 auto;
+    text-align: center;
+    background-color: lightgreen;
+}
+
+.success-message > p {
+    padding: 10px 20px;
+}
