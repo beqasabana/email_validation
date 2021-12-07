@@ -1,0 +1,8 @@
+.invalid-message {
+    padding: 10px 20px;
+}
+
+.invalid-cont{
+    background-color: red;
+    width: fit-content;
+}
